@@ -4,9 +4,9 @@
  * @description Stream
  */
 
-import { StreamInstance } from "./declare";
-import { ListStream } from "./list";
-import { UnknownStream } from "./unknown";
+import { StreamInstance } from "./stream/declare";
+import { ListStream } from "./stream/list";
+import { UnknownStream } from "./stream/unknown";
 
 export class Stream {
 
