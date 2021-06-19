@@ -9,6 +9,6 @@ import { StringStream } from "./string";
 import { UnknownStream } from "./unknown";
 
 export type StreamInstance<T extends any = any> =
-    T extends any[] ? ListStream
+    T extends any[] ? ListStream<T[number]>
     : T extends string ? StringStream
     : UnknownStream;

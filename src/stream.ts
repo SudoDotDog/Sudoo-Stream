@@ -6,6 +6,7 @@
 
 import { StreamInstance } from "./stream/declare";
 import { ListStream } from "./stream/list";
+import { StringStream } from "./stream/string";
 import { UnknownStream } from "./stream/unknown";
 
 export class Stream {
@@ -15,6 +16,11 @@ export class Stream {
         if (Array.isArray(target)) {
 
             return ListStream.of(target) as any;
+        }
+
+        if (typeof target === 'string') {
+
+            return StringStream.of(target) as any;
         }
 
         return UnknownStream.of(target) as any;
