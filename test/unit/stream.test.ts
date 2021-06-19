@@ -8,6 +8,7 @@
 import { expect } from 'chai';
 import * as Chance from 'chance';
 import { ListStream, Stream, StringStream } from '../../src';
+import { RecordStream } from '../../src/stream/record';
 
 describe('Given {Stream} Class', (): void => {
 
@@ -31,5 +32,19 @@ describe('Given {Stream} Class', (): void => {
         const stringStream = Stream.of(value);
 
         expect(stringStream).to.be.instanceOf(StringStream);
+    });
+
+    it('should be able to construct record stream', (): void => {
+
+        const key: string = chance.string();
+        const value: number = chance.integer();
+
+        const map: Record<string, number> = {
+            [key]: value,
+        };
+
+        const recordStream = Stream.of(map);
+
+        expect(recordStream).to.be.instanceOf(RecordStream);
     });
 });
