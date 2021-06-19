@@ -5,6 +5,7 @@
  */
 
 import { ArrayStream } from "./stream/array";
+import { BooleanStream } from "./stream/boolean";
 import { StreamInstance } from "./stream/declare";
 import { NumberStream } from "./stream/number";
 import { RecordStream } from "./stream/record";
@@ -23,6 +24,11 @@ export class Stream {
         if (typeof target === 'number') {
 
             return NumberStream.of(target) as any;
+        }
+
+        if (typeof target === 'boolean') {
+
+            return BooleanStream.of(target) as any;
         }
 
         if (Array.isArray(target)) {
