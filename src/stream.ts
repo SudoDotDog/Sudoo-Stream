@@ -4,8 +4,8 @@
  * @description Stream
  */
 
+import { ArrayStream } from "./stream/array";
 import { StreamInstance } from "./stream/declare";
-import { ListStream } from "./stream/list";
 import { NumberStream } from "./stream/number";
 import { RecordStream } from "./stream/record";
 import { StringStream } from "./stream/string";
@@ -27,7 +27,7 @@ export class Stream {
 
         if (Array.isArray(target)) {
 
-            return ListStream.of(target) as any;
+            return ArrayStream.of(target) as any;
         }
 
         if (typeof target === 'object') {

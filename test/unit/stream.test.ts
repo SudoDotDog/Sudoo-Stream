@@ -7,7 +7,7 @@
 
 import { expect } from 'chai';
 import * as Chance from 'chance';
-import { ListStream, Stream, StringStream } from '../../src';
+import { ArrayStream, Stream, StringStream } from '../../src';
 import { NumberStream } from '../../src/stream/number';
 import { RecordStream } from '../../src/stream/record';
 
@@ -33,15 +33,15 @@ describe('Given {Stream} Class', (): void => {
         expect(numberStream).to.be.instanceOf(NumberStream);
     });
 
-    it('should be able to construct list stream', (): void => {
+    it('should be able to construct array stream', (): void => {
 
         const firstElement: string = chance.string();
 
-        const listStream = Stream.of([
+        const arrayStream = Stream.of([
             firstElement,
         ]);
 
-        expect(listStream).to.be.instanceOf(ListStream);
+        expect(arrayStream).to.be.instanceOf(ArrayStream);
     });
 
     it('should be able to construct record stream', (): void => {
