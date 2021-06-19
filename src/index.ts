@@ -6,6 +6,8 @@
 
 export * from "./stream";
 export * from "./stream/array";
+export * from "./stream/boolean";
+export * from "./stream/date";
 export * from "./stream/declare";
 export * from "./stream/number";
 export * from "./stream/record";
