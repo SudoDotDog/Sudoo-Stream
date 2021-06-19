@@ -7,9 +7,7 @@
 
 import { expect } from 'chai';
 import * as Chance from 'chance';
-import { ArrayStream, Stream, StringStream } from '../../src';
-import { NumberStream } from '../../src/stream/number';
-import { RecordStream } from '../../src/stream/record';
+import { ArrayStream, BooleanStream, DateStream, NumberStream, RecordStream, Stream, StringStream } from '../../src';
 
 describe('Given {Stream} Class', (): void => {
 
@@ -31,6 +29,24 @@ describe('Given {Stream} Class', (): void => {
         const numberStream = Stream.of(value);
 
         expect(numberStream).to.be.instanceOf(NumberStream);
+    });
+
+    it('should be able to construct boolean stream', (): void => {
+
+        const value: boolean = chance.bool();
+
+        const booleanStream = Stream.of(value);
+
+        expect(booleanStream).to.be.instanceOf(BooleanStream);
+    });
+
+    it('should be able to construct date stream', (): void => {
+
+        const value: Date = chance.date();
+
+        const dateStream = Stream.of(value);
+
+        expect(dateStream).to.be.instanceOf(DateStream);
     });
 
     it('should be able to construct array stream', (): void => {
