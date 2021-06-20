@@ -43,6 +43,7 @@ export class Stream {
         }
 
         if (typeof target === 'object') {
+
             return RecordStream.of(target as any) as any;
         }
 
